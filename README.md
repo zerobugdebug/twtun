@@ -84,6 +84,17 @@ twtun -m server -w :8443 -t db-server:3306 -c cert.pem -k key.pem
 twtun -m client -w db-gateway:8443 -t localhost:3306 -p http://corporate-proxy:8080
 ```
 
+## NOTE
+If you have issues with connecting through proxy, try it without the port humber on default port 443.
+
+```bash
+# With port
+twtun -m client -w db-gateway:443 -t localhost:3306 -p http://corporate-proxy:8080
+
+# Without port in case of issues
+twtun -m client -w db-gateway -t localhost:3306 -p http://corporate-proxy:8080
+```
+
 ## Security Considerations
 
 1. Always use TLS certificates in production environments
