@@ -132,7 +132,9 @@ func main() {
 		// Force colored output even when not running in a terminal
 		ForceColors: true,
 		// Show full timestamp in each log entry
-		FullTimestamp: true,
+		FullTimestamp:          true,
+		DisableLevelTruncation: true,
+		PadLevelText:           true,
 	})
 
 	// Set initial log level to Debug (will be overridden by user setting)
